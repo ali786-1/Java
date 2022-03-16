@@ -1,0 +1,59 @@
+ii. Write a java program to find the details of the students eligible to enroll for the examination ( Students, Department combinedly give the eligibility
+    criteria for the enrollement class) using interfaces.
+import java.util.*;
+interface students
+{
+void getvalue();
+}
+interface Department
+{
+void getattendance();
+}
+class exam implements students,Department
+{
+int sno,attendance,c;
+String name;
+Scanner s=new Scanner(System.in);
+public void getvalue()
+{
+System.out.println("enter sno:");
+sno=s.nextInt();
+System.out.println("enter name of the student:");
+name=s.next();
+System.out.println("enter class of the student:");
+c =s.nextInt();
+}
+public void getattendance()
+{
+System.out.println("enter sno:");
+sno=s.nextInt();
+System.out.println("enter attendance of the student:");
+attendance=s.nextInt();
+}
+void calattendance()
+{
+System.out.println("the attendance of the student is "+attendance+"%");
+}
+void booleligible()
+{
+if (attendance <80)
+{
+System.out.println("student is not eligible for exam");
+}
+else
+{
+System.out.println("student is eligible for exam");
+}
+}
+}
+class enroll
+{
+public static void main(String args[])
+{
+exam o=new exam();
+o.getvalue();
+o.getattendance();
+o.calattendance();
+o.booleligible();
+}
+}
